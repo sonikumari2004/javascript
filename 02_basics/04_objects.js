@@ -43,7 +43,7 @@ const obj1 = {1: "a", 2:"b"}
 const obj2 = {3: "c", 4:"d"}
 
 
-/* syntax of merging  -->  Object.assign(target , source)  ==>  where target means the new object  &  source means the objects taht you have to merge 
+/* syntax of merging  -->  Object.assign(target , source)  ==>  where target means the new object  &  source means the objects that you have to merge 
 
  Therefore syntax:    Object.mergre({}, a,b,c)   , a,b,c are objects that you have to merge 
 
@@ -117,3 +117,58 @@ tinderUser.isLoggedIn = false               -->  we can see it has
 console.log(tinderUser.hasOwnProperty('name'))    # true 
 
 */
+
+
+
+/* Destructing   -->  it is a convenient way to extract values from arrays or properties from objects into variables 
+Example: 
+const course={
+    coursename:"chai aur js",
+    price: "99",
+    courseInstructor:"Hitesh"
+}
+
+if we have to print coursename and courseInstructor many time , then again we have to do 
+console.log(course.coursename)
+console.log(course.courseInstructor)
+
+It make the code messy threfore destructuring is used  here 
+
+
+// course.courseInstructor
+
+const {courseInstructor} = course
+//console.log(courseInstructor);
+const {courseInstructor: instructor} = course
+console.log(instructor);  // destructing
+
+const name = course.coursename;
+const price = course.price
+
+Also it is used when we have same variable name and property like above we have made a price variable to get the course price
+
+syntax:
+         const {price , coursename} = course   --> it basically saying: take the price and name properties and from course and create variables with those name
+         
+In case of array
+
+const color = ["red","pink", "white"]
+
+without destructuring 
+          const first = color[1]   // red
+          const second = color[2]  // pink 
+
+with destructing 
+        const {first , second} = colors
+
+
+    NOTE:    Incase of objects , property name matter , and incase of Array positon matters
+
+We can also rename the property 
+
+const {courseInstructor: mentor} = course 
+console.log(mentor) # Hitesh
+
+Remember:  {name}   --> Aise jaha pr bhi dikhega smjh jana destructing kiya gya hai 
+*/
+ 
