@@ -95,3 +95,42 @@ user.forEach((customer)=>{
                     anand
                     amp
 */
+
+/*   
+     lecture 30
+
+     forEach() --> does not return a new array or collect the values returned by its callback. Even if you write return inside forEach(), it only returns from that callback function , not from the outer function.
+     
+      What happens when we return a value inside forEach()? -->  it give output as undefined
+
+const numbers = [1,2,3,4,5]
+
+const result = number.forEach((num) =>{
+    return num *2
+    })
+ console.log(result) 
+ output:
+      undefined
+
+Why?    1. forEach() visits each element
+        2. The callback retuns 2,4,6,8,10
+        3. But forEach() does not collect these returned values, although we have used return keyword 
+        4. Therefore, result is undefined
+
+ What if we want to return values using forEach()?
+ -->  create an empty array 
+ -->  perform the operations you want to 
+ --> add/push it into the empty array
+
+ const numbers = [1,2,3,4,5]
+ const result = []
+
+ numbers.forEach((num) =>{
+    result.push(num * 2)
+    })
+ console.log(result)
+
+ NOTE:   And if we want to return the modified array directly ==>  use map()  directly   --> aage padhnge map()
+----------------------------------------------------------------------------------------------------------------------------
+*/
+     
