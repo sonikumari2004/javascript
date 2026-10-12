@@ -11,17 +11,20 @@
 </body>
 
 <script>
+    // creating a new element
     // create a div
     const div = document.createElement('div')
-    console.log(div)
+    console.log(div);
+
     div.className = "main"
-    div.id = Math.round(Math.random() * 10 + 10)
+    // div.id = "myId"
+    div.id = Math.round(Math.random() * 10 + 1)
     div.setAttribute('title', "generated title")
     div.style.backgroundColor="green"
     div.style.padding = "12px"
     div.innerText = "Chai aur code" // innerHTML --> first bring the HTML written inside and then overwrite it. 2 steps hota hai 
 
-    // another method is to create a taxt node and then append in the div
+    // another method is to create a text node and then append in the div
 
     const addText = document.createTextNode("Chai aur code")
    div.appendChild(addText)  // here also 2 steps hua 1st create & then append 
