@@ -11,47 +11,61 @@
 <body style="background-color: #212121; color: #fff;">
 
     <ul class="language">
-        <li>Javascript</li>
+        <li>Javascript</li> <!-- Now only javascript is presentg inside the language, so add more language so create a function for it -->
     </ul>
 
 </body>
 <script>
     function addLanguage(langName){
         const li = document.createElement('li'); // creating an element
+
+        li.appendChild(document.createTextNode(langName))
         li.innerHTML = `${langName}` // adding value inside an element
         document.querySelector('.language').appendChild(li)
     }
     addLanguage("python")
     addLanguage("typescript")
 
-
+   // same work can be done using appendChild() also, it makes the code more optimised 
    // in optimize way 
 
     function addOptiLanguage(langName){
-        const li = document.createElement('li');
+        const li = document.createElement('li');  //  ---> don't think about error as already a li variable is created above  => there won't be any error because uska scope alag hai 
         li.appendChild(document.createTextNode(langName))
         document.querySelector('.language').appendChild(li)
     }
-    addOptiLanguage('golang')
+    addOptiLanguage('golang')  // added golang
 
 
-    //Edit
+    //Edit the 2nd value
     const secondLang = document.querySelector("li:nth-child(2)")
     console.log(secondLang);
-    //secondLang.innerHTML = "Mojo"
+    //secondLang.innerHTML = "java"   // python(2nd language or 2nd child)changed to java
+     // or 
     const newli = document.createElement('li')
-    newli.textContent = "Mojo"
-    secondLang.replaceWith(newli)
+    newli.textContent = "java"  // abhi ye hawa mein created hai 
+    secondLang.replaceWith(newli)  // python is replaced with java ,  hmm innerHTML bhi kr skte hai no prblm, also we can use appendChildren
+  
 
 
-    //Edit
+    //Edit the 1st language
     const firstLang = document.querySelector("li:first-child")
-    firstLang.outerHTML = '<li>TypeScript</li>'
+    firstLang.outerHTML = '<li>TypeScript</li>'  // JavaScript changed to TypeScript
 
-    
+    // remove the value/element
+        // TypeScript
+        // java
+        // typescript
+        // golang       -- remove the golang
+     
+
+
     //remove
     const lastLang = document.querySelector('li:last-child')
-    lastLang.remove()
+    lastLang.remove()  // current web page
+                            // TypeScript
+                            // java
+                            // typescript
 
 
 </script>
